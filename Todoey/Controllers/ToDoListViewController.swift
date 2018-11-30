@@ -98,7 +98,6 @@ class ToDoListViewController: UITableViewController {
                 try realm.write {
                     let newItem = ToDoItem()
                     newItem.title = title
-                    newItem.done = false
                     currentCategory.items.append(newItem)
                 }
             } catch {
@@ -110,7 +109,7 @@ class ToDoListViewController: UITableViewController {
     }
 
     func loadItems() {
-        toDoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        toDoItems = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
     }

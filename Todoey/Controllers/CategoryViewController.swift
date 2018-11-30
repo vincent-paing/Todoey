@@ -90,7 +90,6 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - Tableview delegate method
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: Add Navigation
         performSegue(withIdentifier: "goToItem", sender: self)
     }
     
